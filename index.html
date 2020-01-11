@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VIVMMI - Apriansyah Rizqi S.</title>
+  <!-- icons, css & js -->
+  <link rel="manifest" href="/manifest.json"> 
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="shortcut icon" type="image/png" href="img/icon-512x512.png" />
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="/img/icon-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#b2dfdb">
+  <meta name="theme-color" content="#b2dfdb">
+</head>
+
+<body>
+  <header id="header">
+    <div class="wrapper">
+      <a href="#">
+        <img src="img/logo.png"/>
+      </a>
+      
+      <button onclick="showMenu()" id="submenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Menu Link -->
+      <ul class="menu-right">
+        <li><a href="index.html">
+          Home
+        </a></li>
+        <li><a href="#about">
+          About
+        </a></li>
+        <li><a href="contact.html">
+          Contact
+        </a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Intro Page Start -->
+  <section id="intro">
+    <div class="top-right-gradient"></div>
+    <div class="wrapper">
+      <div class="intro-left">
+        <h1>VIVMMI - <br>Apriansyah Rizqi S.</h1>
+        <p>Hello World! Right now, I'm tryna learn a bunch of a new technology on buildwithangga.com!</p>
+        <a href="https://buildwithangga.com/" class="intro-cta" target="_blank">Go to BWA</a>
+      </div>
+      <div class="intro-right">
+        <img src="img/poster.svg" alt="poster" />
+      </div>
+    </div>
+
+    <div class="bottom-left-gradient"></div>
+
+    <div class="icon-bar">
+      <a href="https://facebook.com/xprnsyh" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
+      <a href="https://instagram.com/apriansyahrs" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a> 
+    </div>
+  </section>
+
+  <section id="about" data-aos="fade-left">
+    <br><br><br>
+    <div class="wrapper">
+      <div class="about-left">
+        <img src="img/about.png" alt="about"/>
+      </div>
+      
+      <div class="about-right">
+        <h1>About Me</h1>
+        <p>I'm enthusiastic, reliable, responsible, polite and always willing to learn new skill and deep into that skills. I am able to work independently also within a team setting. My Motto is "All the impossible is possible for those who believe!". <br><br><br></p>
+      </div>
+    </div>
+    <div class="top-right-gradient"></div>
+  <br><br><br>
+  </section>
+  <!-- Page Banner -->
+  <section>
+    <div class="page-banner" data-aos="fade-right">
+      <h1>VIVMMI - Apriansyah Rizqi S.</h1>
+      <h3>Kecamatan Kejaksan, Kota Cirebon - Jawa Barat.</h3>
+      <a href="https://drive.google.com/file/d/1WrBYCCws4pE27Kt4y97UXNTH4IjThaxG/view?usp=sharing" target="_blank">Download My CV</a>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrapper">
+    <div class="footer-center">
+      <p class="footer-name">Best Regards &copy; 2020 - VIVMMI</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  //animasi
+  AOS.init({
+    offset: 120,
+    duration: 700,
+  });
+
+  function showMenu() {
+    // event.preventDefault();
+    let element = document.getElementById('header');
+
+    if(element.classList.contains('active')){
+      element.className = "";
+    }else{
+      element.className = "active";
+    }
+  }
+
+  // REGISTER SERVICE WORKER
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then(function() {
+          console.log("Pendaftaran ServiceWorker berhasil");
+        })
+        .catch(function() {
+          console.log("Pendaftaran ServiceWorker gagal");
+        });
+    });
+  } else {
+    console.log("ServiceWorker belum didukung browser ini.");
+  }
+</script>
+</body>
+</html>
